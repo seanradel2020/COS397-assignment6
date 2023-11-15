@@ -27,6 +27,15 @@ def bubble(int_list):
     """
     print("bubble sort")
 
+    length = len(int_list)
+
+    for i in range(length):
+        for j in range(0, length-i-1):
+            if int_list[j] > int_list[j+1]:
+                int_list[j], int_list[j+1] = int_list[j+1], int_list[j]
+    
+    return int_list
+
 
 def quick(int_list):
     """
