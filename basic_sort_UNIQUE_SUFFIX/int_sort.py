@@ -23,17 +23,19 @@ This module sorts lists of integers...
 
 def bubble(int_list):
     """
-    bubble docstring
+    :param int_list: a list of integers
+
+    :returns: the sorted list of integers
     """
     print("bubble sort")
 
     length = len(int_list)
 
     for i in range(length):
-        for j in range(0, length-i-1):
-            if int_list[j] > int_list[j+1]:
-                int_list[j], int_list[j+1] = int_list[j+1], int_list[j]
-    
+        for j in range(0, length - i - 1):
+            if int_list[j] > int_list[j + 1]:
+                int_list[j], int_list[j + 1] = int_list[j + 1], int_list[j]
+
     return int_list
 
 
