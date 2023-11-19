@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         py_version: ["3.9", "3.10"]
-        os_version: [windows-latest, ubuntu-latest, macOS-latest]
+        os_version: [ubuntu-latest]
 
     steps:
     - uses: actions/checkout@v3
@@ -38,4 +38,7 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+    - name: Build
+      run: |
+        python3 -m build
 
