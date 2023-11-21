@@ -60,6 +60,6 @@ jobs:
     - name: Publish distribution 📦 to TestPyPI
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
-        password: "pypi-AgENdGVzdC5weXBpLm9yZwIkMzRmZDFjNjYtNjhhMC00OGJkLWFkMzUtMmE5ZTg4Y2I0YzMwAAIqWzMsImM1NWY1NGQxLWFjODktNGEzYi1iYjA4LTZkNzM0OGI2NWNlNiJdAAAGIMolO90lqIflGnAK_AYdUM0WHd2Q9JMMWobl1ZDahf9X"
+        password: 
         repository-url: https://test.pypi.org/legacy/
         verbose: true
