@@ -5,7 +5,7 @@ requires = ["setuptools>=61.0",
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "basic_sort_UNIQUE_SUFFIX"
+name = "basic_sort_IMSG"
 version = "0.0.1"
 authors = [{ name="Brennan Poitras", email="brennan.poitras@maine.edu" },
            { name="Author2", email="author2@maine.edu" },
@@ -21,5 +21,3 @@ classifiers = [
 
 [project.urls]
 "Bug Tracker" = "https://github.com/pypa/python_package_exercise/issues"
-
-
