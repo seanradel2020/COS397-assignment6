@@ -23,4 +23,6 @@ classifiers = [
 ]
 
 [project.urls]
+
+
 "Bug Tracker" = "https://github.com/pypa/python_package_exercise/issues"
