@@ -46,7 +46,7 @@ jobs:
 
     environment:
       name: testpypi
-      url: https://test.pypi.org/p/<package-name>
+      url: https://test.pypi.org/p/COS397-assignment6
 
     permissions:
       id-token: write  # IMPORTANT: mandatory for trusted publishing
