@@ -44,16 +44,17 @@ def quick(int_list):
     Quick sort implementation.
     """
     print("quick sort")
-    
+
     if len(int_list) <= 1:
         return int_list
-    
+
     pivot = int_list[len(int_list) // 2]
     left = [x for x in int_list if x < pivot]
     middle = [x for x in int_list if x == pivot]
     right = [x for x in int_list if x > pivot]
-    
+
     return quick(left) + middle + quick(right)
+
 
 def insertion(int_list):
     """
@@ -68,6 +69,5 @@ def insertion(int_list):
             int_list[j + 1] = int_list[j]
             j -= 1
         int_list[j + 1] = key
-    
-    return int_list
 
+    return int_list
