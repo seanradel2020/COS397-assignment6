@@ -11,7 +11,7 @@ authors = [{ name="Brennan Poitras", email="brennan.poitras@maine.edu" },
            { name="Sean Radel", email="seal.radel@maine.edu" },
            { name="Gabriel Poulin", email="gabriel.poulin@maine.edu" },
            { name="Collin Rodrigue", email="collin.rodrigue@maine.edu" },
-           { name="Graham Bridges", email="graham.bridges@maine.edu" },
+           { name="Graham Bridges", email="graham.bridges@maine.edu" }
 ]
 description = "An exercise in the capstone course"
 readme = "README.md"
