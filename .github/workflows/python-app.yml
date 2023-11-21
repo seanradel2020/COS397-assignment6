@@ -1,0 +1,136 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Python application
+
+on: [workflow_dispatch]
+  
+
+permissions:
+  contents: read
+
+jobs:
+  build_macOS:
+
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        py_version: ["3.9", "3.10"]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up ${{matrix.py_version}}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{matrix.py_version}}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install --upgrade build
+        python -m pip install --upgrade pip setuptools wheel
+        python -m pip install flake8
+        python -m pip install pytest
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Build
+      run: |
+        python -m build
+    - name: Store the distribution packages
+      uses: actions/upload-artifact@v3
+      with:
+        name: python-package-distributions
+        path: dist/
+
+  build_windows:
+
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        py_version: ["3.9", "3.10"]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up ${{matrix.py_version}}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{matrix.py_version}}
+    - name: Install dependencies
+      run: |
+        py -m pip install --upgrade pip
+        py -m pip install --upgrade build
+        py -m pip install --upgrade pip setuptools wheel
+        py -m pip install flake8
+        py -m pip install pytest
+        py -m pip install -r requirements.txt
+    - name: Build
+      run: |
+        py -m build
+    - name: Store the distribution packages
+      uses: actions/upload-artifact@v3
+      with:
+        name: python-package-distributions
+        path: dist/
+
+  build_linux:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        py_version: ["3.9", "3.10"]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up ${{matrix.py_version}}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{matrix.py_version}}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install --upgrade build
+        python -m pip install --upgrade pip setuptools wheel
+        python -m pip install flake8
+        python -m pip install pytest
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Build
+      run: |
+        python -m build
+    - name: Store the distribution packages
+      uses: actions/upload-artifact@v3
+      with:
+        name: python-package-distributions
+        path: dist/
+    - name: Flake8
+      run: |
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    - name: PyTest
+      run: |
+        pytest
+        
+  publish-to-testpypi:
+    name: Publish Python 🐍 distribution 📦 to TestPyPI
+    needs:
+    - build_linux
+    runs-on: ubuntu-latest
+
+    environment:
+      name: testpypi
+      url: https://test.pypi.org/p/COS397-assignment6
+
+    permissions:
+      id-token: write  # IMPORTANT: mandatory for trusted publishing
+
+    steps:
+    - name: Download all the dists
+      uses: actions/download-artifact@v3
+      with:
+        name: python-package-distributions
+        path: dist/
+    - name: Publish distribution 📦 to TestPyPI
+      uses: pypa/gh-action-pypi-publish@release/v1
+      with:
+        password: ${{ secrets.THIS_IS_SECRET }}
+        repository-url: https://test.pypi.org/legacy/
+        verbose: true
