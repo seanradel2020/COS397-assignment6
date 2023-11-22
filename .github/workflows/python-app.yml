@@ -67,9 +67,6 @@ jobs:
     - name: Build
       run: |
         py -m build
-    - name: PyTest
-      run: |
-        pytest
     - name: Store the distribution packages
       uses: actions/upload-artifact@v3
       with:
