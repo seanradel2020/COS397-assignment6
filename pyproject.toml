@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "basic_sort_IMSG"
-version = "0.0.2"
+version = "0.0.4"
 authors = [{ name="Brennan Poitras", email="brennan.poitras@maine.edu" },
            { name="Sean Radel", email="seal.radel@maine.edu" },
            { name="Gabriel Poulin", email="gabriel.poulin@maine.edu" },
