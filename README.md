@@ -1,5 +1,5 @@
 ![testpypi](https://github.com/seanradel2020/COS397-assignment6/actions/workflows/python-app.yml/badge.svg)
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/seanradel2020/COS397-assignment6)
 ![pre-commit](https://github.com/seanradel2020/COS397-assignment6/.pre-commit-config.yaml/badge.svg)
 # DevOps Exercise
 
