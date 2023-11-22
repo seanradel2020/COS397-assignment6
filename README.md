@@ -17,7 +17,10 @@ When a developer is ready to push their changes to our repository, the following
     4. pre-commit ensures the code conforms to the following style checkers and linters:
         1. black
         2. flake8
-3. Next, GABE ADD PYTEST and WORKFLOW ACTIONS STUFF HERE/the stuff you did
+3. Next, using GitHub actions, you can start the workflow manually.
+    1. This workflow "Python Application" complies a package for MacOS, Windows and Ubuntu, all the latest versions.
+    2. This workflow also runs PyTest on the Ubuntu package, as that is the most recent one created, which runs all tests presented in the tests folder.
+    3. Finally, the workflow, using a generated API key in secrets, sends the package to TestPyPi, where you can use pip to install our package. 
 
 
 1. Modify the GitHub actions workflow so that it tests and builds the package for all 
