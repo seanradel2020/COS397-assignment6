@@ -1,4 +1,4 @@
-![testpypi](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+![testpypi](https://github.com/seanradel2020/COS397-assignment6/actions/workflows/python-app.yml/badge.svg)
 # DevOps Exercise
 
 This is a skeleton repository for your exercise. 
