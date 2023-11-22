@@ -23,10 +23,4 @@ When a developer is ready to push their changes to our repository, the following
     3. Finally, the workflow, using a generated API key in secrets, sends the package to TestPyPi, where you can use pip to install our package. 
 
 
-1. Modify the GitHub actions workflow so that it tests and builds the package for all 
-three operating systems (OSX/Linux/Win) and for Python versions 3.9 and 3.10. Read more about [Distributing Python packages](https://docs.python.org/3/distributing/index.html).
-1. Modify this file to describe this repository and the DevOps workflow you implemented (add badges to this file showing testing status).
-1. **Optional**: Add a job to the workflow which uploads the wheel to [TestPyPI](https://test.pypi.org/). As every package on TestPyPI is required to have a unique name you need to update the UNIQUE_SUFFIX both in the directory name and in the .toml file. Possibly use your team number.
-    >**Warning**: Do not upload to the authoritative Python Package Index (PyPI).  
-
 
