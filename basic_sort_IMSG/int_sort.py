@@ -41,7 +41,9 @@ def bubble(int_list):
 
 def quick(int_list):
     """
-    Quick sort implementation.
+    :param int_list: a list of integers
+
+    :returns: the sorted list of integers
     """
     print("quick sort")
 
@@ -58,7 +60,9 @@ def quick(int_list):
 
 def insertion(int_list):
     """
-    Insertion sort implementation.
+    :param int_list: a list of integers
+
+    :returns: the sorted list of integers
     """
     print("insertion sort")
 
