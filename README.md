@@ -1,4 +1,5 @@
 ![testpypi](https://github.com/seanradel2020/COS397-assignment6/actions/workflows/python-app.yml/badge.svg)
+![pre-commit](https://github.com/seanradel2020/COS397-assignment6/actions/workflows/.pre-commit-config.yaml/badge.svg)
 # DevOps Exercise
 
 This is a skeleton repository for your exercise. 
